@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ffffff;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #9eb0a0;
+            border: 1px solid #373636;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            width: 90%;
+            max-width: 600px; /* Increased max-width for better fit */
+            overflow-x: auto; /* Allows horizontal scrolling if needed */
+            white-space: nowrap; /* Keeps the color swatches in a single line */
+        }
+        .color {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            cursor: pointer;
+            border: 2px solid #8a3b06;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        .clr1 { background-color: #f4c4f4; }
+        .clr2 { background-color: #a6e6d7; }
+        .clr3 { background-color: #fcf8b7; }
+        .clr4 { background-color: #aeb0e5; }
+        .clr5 { background-color: #e96e72; }
+        .clr6 { background-color: #c8f33d; }
+        .clr7 { background-color: #ffd093; }
+        .clr8 { background-color: #fdd9c9; }
+        .clr9 { background-color: #c1f1c1; }
+        .clr10 { background-color: #a0a0a0; }
+
+        @media (max-width: 768px) {
+            .color {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span id='1' onclick="color(this)" class="color clr1"></span>
+        <span id='2' onclick="color(this)" class="color clr2"></span>
+        <span id='3' onclick="color(this)" class="color clr3"></span>
+        <span id='4' onclick="color(this)" class="color clr4"></span>
+        <span id='5' onclick="color(this)" class="color clr5"></span>
+        <span id='6' onclick="color(this)" class="color clr6"></span>
+        <span id='7' onclick="color(this)" class="color clr7"></span>
+        <span id='8' onclick="color(this)" class="color clr8"></span>
+        <span id='9' onclick="color(this)" class="color clr9"></span>
+        <span id='10' onclick="color(this)" class="color clr10"></span>
+    </div>
+
+    <script>
+        function color(element) {
+            var style = getComputedStyle(element);
+            var backgroundColor = style.backgroundColor;
+            document.body.style.backgroundColor = backgroundColor;
+        }
+    </script>
+</body>
+</html>
